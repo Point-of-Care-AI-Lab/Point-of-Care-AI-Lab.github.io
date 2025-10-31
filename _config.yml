@@ -4,7 +4,7 @@
 
 title: Point-of-Care AI Lab # the website title
 first_name: Ran
-middle_name: 
+middle_name:
 last_name: Yang, Ph.D.
 contact_note: >
   Feel free to reach out via email for collaborations or inquiries.
@@ -33,7 +33,7 @@ social:
   - icon: fas fa-envelope
     link: "mailto:rxyan2@wm.edu"
   - icon: ai ai-google-scholar # Google Scholar icon
-    link: "httpsType-your-Google-Scholar-ID-here" # Replace with your full Google Scholar profile URL
+    link: "https://scholar.google.com/citations?user=YOUR_ID" # Replace YOUR_ID with your Google Scholar ID
   - icon: fab fa-github
     link: "https://github.com/Point-of-Care-AI-Lab" # Link to your lab's organization
   - icon: fas fa-university
@@ -117,7 +117,7 @@ related_blog_posts:
 # Giscus comments (RECOMMENDED)
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out the information below.
 giscus:
-  repo: # <your-github-user-name>/<your-github-repo-name>
+  repo: Point-of-Care-AI-Lab/Point-of-Care-AI-Lab.github.io # Set to actual repo name for GitHub Actions
   repo_id: # leave empty or specify your repo_id (see https://giscus.app/)
   category: Comments # name of the category under which discussions will be created
   category_id: # leave empty or specify your category_id (see https://giscus.app/)
@@ -130,7 +130,7 @@ giscus:
   emit_metadata: 0
   lang: en
 
-# Disqus comments (DEPRECATED)
+# Disqus comments (DEPRECATED, do not use. Use Giscus above.)
 disqus_shortname: al-folio # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
