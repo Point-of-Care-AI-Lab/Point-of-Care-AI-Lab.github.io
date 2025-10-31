@@ -14,7 +14,9 @@ name: "Lighthouse Badger"
 
 # INPUTS as Secrets (env) for not manually triggered workflows
 env:
-  URLS: https://alshedivat.github.io/al-folio/
+  # This now points to YOUR new site URL
+  URLS: https://Point-of-Care-AI-Lab.github.io/
+  
   # If any of the following env is blank, a default value is used instead
   REPO_BRANCH: "${{ github.repository }} master" # target repository & branch e.g. 'dummy/mytargetrepo main'
   MOBILE_LIGHTHOUSE_PARAMS: "--only-categories=performance,accessibility,best-practices,seo --throttling.cpuSlowdownMultiplier=2"
@@ -43,13 +45,15 @@ jobs:
           REPOSITORY=`expr "${{ env.REPO_BRANCH }}" : "\([^ ]*\)"`
           BRANCH=`expr "${{ env.REPO_BRANCH }}" : ".* \([^ ]*\)"`
           echo "REPOSITORY=$REPOSITORY" >> $GITHUB_ENV
-          echo "BRANCH=$BRANCH" >> $GITHUB_ENV
+          echo "BRANCH=$BRANCH" >> $GITHUB_E_NV
         env:
           REPO_BRANCH: ${{ env.REPO_BRANCH }}
       - uses: actions/checkout@v4
         with:
           repository: ${{ env.REPOSITORY }}
-          token: ${{ secrets.LIGHTHOUSE_BADGER_TOKEN }}
+          # This token is for CHECKING OUT your repo to add the badge
+          # We'll use a more secure method in the next step
+          token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ env.BRANCH }}
       - uses: actions/checkout@v4
         with:
@@ -57,6 +61,8 @@ jobs:
           path: temp_lighthouse_badges_nested
       - uses: myactionway/lighthouse-badger-action@v2.2
         with:
+          # This is the fix for the error you received
+          token: ${{ secrets.GITHUB_TOKEN }}
           urls: ${{ env.URLS }}
           mobile_lighthouse_params: ${{ env.MOBILE_LIGHTHOUSE_PARAMS }}
           desktop_lighthouse_params: ${{ env.DESKTOP_LIGHTHOUSE_PARAMS }}
