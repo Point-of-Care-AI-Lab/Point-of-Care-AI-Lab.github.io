@@ -10,7 +10,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>7572212444 your office number</p>
-    <p>123 your address street</p>
+    <p>300 ukrop way, williamsburg, VA 23185</p>
     <p>Your City, State 12345</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
